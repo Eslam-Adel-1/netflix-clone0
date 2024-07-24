@@ -1,0 +1,11 @@
+* {
+  margin: 0%;
+  box-sizing: border-box;
+}
+.App {
+  /* overflow-x: hidden; */
+  background-color: #111;
+  color: whitesmoke;
+  height: 100%;
+  position: relative;
+}

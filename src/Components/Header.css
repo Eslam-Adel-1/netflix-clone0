@@ -1,0 +1,42 @@
+.header_main {
+  transition: all ease 250ms;
+  width: 100%;
+  padding: 7px 15px 7px 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(48, 48, 48, 0.667);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+}
+
+.header_main_sec {
+  transition: all ease 250ms;
+  width: 100%;
+  padding: 7px 15px 7px 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: sticky;
+  top: 0%;
+  z-index: 1;
+  background-color: #111;
+}
+
+/* .header_main:hover {
+  transition: all ease 250ms;
+  background-color: #111;
+} */
+
+.header_main > img {
+  object-fit: contain;
+  width: 110px;
+}
+
+.header_main_sec > img {
+  object-fit: contain;
+  width: 110px;
+}

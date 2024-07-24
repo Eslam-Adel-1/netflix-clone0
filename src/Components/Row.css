@@ -1,0 +1,33 @@
+.row_section {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 10px;
+}
+
+.main_row_section > h2 {
+  margin: 15px 0px 5px 15px;
+}
+
+.row_section::-webkit-scrollbar {
+  display: none;
+}
+.image_rapper > img {
+  object-fit: contain;
+  width: 120px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+.image_rapper > img:hover {
+  transform: scale(1.05);
+  transition: all ease 250ms;
+  border: 2px solid rgb(223, 255, 44);
+  cursor: pointer;
+}
+.youtube_video {
+  width: 100%;
+  background-color: black;
+}
+.youtube_video_v {
+}
