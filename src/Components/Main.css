@@ -33,8 +33,13 @@
   border-radius: 15px;
   padding: 20px;
   border: 2px whitesmoke solid;
-  max-width: 400px;
-  margin-left: 50px;
+  max-width: 1000px;
+  margin: 50px;
+}
+@media (max-width: 600px) {
+  .main_content_rapper {
+    margin: 15px;
+  }
 }
 
 .fade_class {
