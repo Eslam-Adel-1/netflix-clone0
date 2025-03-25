@@ -31,11 +31,6 @@ const requests = [
     name: "Top_rated",
     url: `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${random_number}&api_key=${Api_Key}`,
   },
-  // configuration: `https://api.themoviedb.org/3/configuration?api_key=${Api_Key}`,
-  // countries: `https://api.themoviedb.org/3/configuration/countries?api_key=${Api_Key}&language=en-US`,
-  // geners: `https://api.themoviedb.org/3/genre/movie/list?api_key=${Api_Key}&language=en`,
-  // details: `https://api.themoviedb.org/3/keyword/12?api_key=${Api_Key}`,
-  // popular: `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${random_number}&api_key=${Api_Key}`,
 ];
 
 export default requests;

@@ -3,21 +3,29 @@ import "./Main.css";
 
 const Main = ({ fetchUrl }) => {
   const [movies, setMovies] = useState([]);
+  const [loader, setLoader] = useState(false);
   const baseUrlImage = "https://image.tmdb.org/t/p/original";
   let imageUrl = "";
   //---------------------------------------------------
   useEffect(() => {
+    setLoader(true);
     const fetchData = () => {
-      fetch(fetchUrl)
-        .then((data) => {
-          return data.json();
-        })
-        .then((data2) => {
-          setMovies(data2);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      try {
+        fetch(fetchUrl)
+          .then((data) => {
+            return data.json();
+          })
+          .then((data2) => {
+            setMovies(data2);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoader(false);
+      }
     };
     fetchData();
   }, [fetchUrl]);
@@ -78,20 +86,25 @@ const Main = ({ fetchUrl }) => {
         backgroundImage: checkUnDefinedImage(),
       }}
     >
-      <div className="fade_class_up"></div>
-
-      <div className="main_content_rapper">
-        <h4>{checkUnDefined(movies)}</h4>
-        <h6>{checkUnDefinedReleaseDate(movies)}</h6>
-        <div className="buttons">
-          <button className="bt1">Play Now</button>
-          <button className="bt2">Details</button>
-        </div>
-        <div className="overview">
-          <p>{checkUnDefinedOverview(movies)}</p>
-        </div>
-      </div>
-      <div className="fade_class"></div>
+      {loader ? (
+        <div className="loader"></div>
+      ) : (
+        <>
+          <div className="fade_class_up"></div>
+          <div className="main_content_rapper">
+            <h4>{checkUnDefined(movies)}</h4>
+            <h6>{checkUnDefinedReleaseDate(movies)}</h6>
+            <div className="buttons">
+              <button className="bt1">Play Now</button>
+              <button className="bt2">Details</button>
+            </div>
+            <div className="overview">
+              <p>{checkUnDefinedOverview(movies)}</p>
+            </div>
+          </div>
+          <div className="fade_class"></div>
+        </>
+      )}
     </div>
   );
 };
